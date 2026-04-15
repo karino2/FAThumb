@@ -54,6 +54,8 @@ inline TBpp32 Bpp32( BYTE r, BYTE g, BYTE b )
   return res;
 }
 
+#pragma pack(pop)
+
 } // namespace neet
 
 #endif
