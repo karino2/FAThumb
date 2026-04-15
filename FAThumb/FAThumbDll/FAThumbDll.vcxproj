@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6F2ECE2B-FC85-4869-8C39-8694D76E8B88}</ProjectGuid>
+    <RootNamespace>FAThumbDll</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>FAThumbDll</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.28916.169</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\_pgn\_manga;..\..\_pgn\_wintab;..\..\_pgn\_flatbuffers;..\..\_pgn\_fastlz;..\..\_pgn\_tinyxml;..\..\_pgn\_zlib131;..\..\_pgn\_zstd;..\..\_pgn\_babel;..\..\boost_1_79_0;..\..\_pgn\_libneet;..\..\_pgn\_lua-5.1.4;.\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\_pgn\_manga;..\..\_pgn\_wintab;..\..\_pgn\_flatbuffers;..\..\_pgn\_fastlz;..\..\_pgn\_tinyxml;..\..\_pgn\_zlib131;..\..\_pgn\_zstd;..\..\_pgn\_babel;..\..\boost_1_79_0;..\..\_pgn\_libneet;..\..\_pgn\_lua-5.1.4;.\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\pgn;..\..\_pgn\_manga;..\..\_pgn\_flatbuffers;..\..\_pgn\_zstd;.\;..\..\_pgn\_zstd</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\_pgn\_manga;..\..\_pgn\_wintab;..\..\_pgn\_flatbuffers;..\..\_pgn\_fastlz;..\..\_pgn\_tinyxml;..\..\_pgn\_zlib131;..\..\_pgn\_zstd;..\..\_pgn\_babel;..\..\boost_1_79_0;..\..\_pgn\_libneet;..\..\_pgn\_lua-5.1.4;.\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\_pgn\_manga;..\..\_pgn\_wintab;..\..\_pgn\_flatbuffers;..\..\_pgn\_fastlz;..\..\_pgn\_tinyxml;..\..\_pgn\_zlib131;..\..\_pgn\_zstd;..\..\_pgn\_babel;..\..\boost_1_79_0;..\..\_pgn\_libneet;..\..\_pgn\_lua-5.1.4;.\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\pgn;..\..\_pgn\_manga;..\..\_pgn\_flatbuffers;..\..\_pgn\_zstd;.\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MDPTHUMBDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>GlobalExportFunctions.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\_pgn\_manga\manga_file_pxv_thumb.cpp" />
+    <ClCompile Include="..\..\_pgn\_zstd\debug.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\entropy_common.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\error_private.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\fse_compress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\fse_decompress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\hist.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\huf_compress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\huf_decompress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\pool.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_common.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress_literals.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress_sequences.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_ddict.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_decompress.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_decompress_block.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_double_fast.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_fast.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_lazy.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_ldm.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_opt.c" />
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_xxhash.c" />
+    <ClCompile Include="..\pgn\libneet_geom.cpp" />
+    <ClCompile Include="..\pgn\pgn.cpp" />
+    <ClCompile Include="ClassFactory.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="GetPxvThumbnail.cpp" />
+    <ClCompile Include="FAThumbDll.cpp" />
+    <ClCompile Include="FAThumbnailProvider.cpp" />
+    <ClCompile Include="Reg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GlobalExportFunctions.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\allocator.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\array.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\base.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\buffer.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\buffer_ref.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\default_allocator.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\detached_buffer.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\flatbuffers.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\flatbuffer_builder.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\stl_emulation.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\string.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\struct.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\table.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\vector.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\vector_downward.h" />
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\verifier.h" />
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pack.hpp" />
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pstore.hpp" />
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pstream.hpp" />
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_thumb.h" />
+    <ClInclude Include="..\..\_pgn\_manga\pxvinfo_generated.h" />
+    <ClInclude Include="..\..\_pgn\_manga\pxvmeta_generated.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\bitstream.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\compiler.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\cpu.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\debug.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\error_private.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\fse.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\hist.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\huf.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\mem.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\pool.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\xxhash.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_internal.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_literals.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_sequences.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_cwksp.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_ddict.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_decompress_block.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_decompress_internal.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_double_fast.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_errors.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_fast.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_internal.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_lazy.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_ldm.h" />
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_opt.h" />
+    <ClInclude Include="..\pgn\img_32.h" />
+    <ClInclude Include="..\pgn\libneet.h" />
+    <ClInclude Include="..\pgn\libneet_charcode.h" />
+    <ClInclude Include="..\pgn\libneet_file.h" />
+    <ClInclude Include="..\pgn\libneet_geom.h" />
+    <ClInclude Include="..\pgn\libneet_pixel.h" />
+    <ClInclude Include="..\pgn\libneet_thread.h" />
+    <ClInclude Include="ClassFactory.h" />
+    <ClInclude Include="GetPxvThumbnail.h" />
+    <ClInclude Include="FAThumbnailProvider.h" />
+    <ClInclude Include="Reg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

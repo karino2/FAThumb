@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="manga">
+      <UniqueIdentifier>{604b2e63-3f0e-470a-89c7-2bc10d821017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zstd">
+      <UniqueIdentifier>{5bd75eb5-1b8b-4136-aa97-59609042a6c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pgn">
+      <UniqueIdentifier>{a56c336b-ca93-4f3e-91f8-ba8d1ff898f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flatbuffers">
+      <UniqueIdentifier>{e23430e7-3966-4ee5-9796-5365489ee330}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClassFactory.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="FAThumbDll.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="FAThumbnailProvider.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Reg.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GetPxvThumbnail.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\debug.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\entropy_common.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\error_private.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\fse_compress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\fse_decompress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\hist.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\huf_compress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\huf_decompress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_manga\manga_file_pxv_thumb.cpp">
+      <Filter>manga</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\pool.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_common.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress_literals.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_compress_sequences.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_ddict.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_decompress.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_decompress_block.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_double_fast.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_fast.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_lazy.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_ldm.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_opt.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\_pgn\_zstd\zstd_xxhash.c">
+      <Filter>zstd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pgn\pgn.cpp">
+      <Filter>pgn</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pgn\libneet_geom.cpp">
+      <Filter>pgn</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GlobalExportFunctions.def">
+      <Filter>ソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ClassFactory.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="FAThumbnailProvider.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Reg.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GetPxvThumbnail.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pack.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pstore.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_pstream.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\pxvinfo_generated.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\pxvmeta_generated.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_manga\manga_file_pxv_thumb.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\img_32.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\debug.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\compiler.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\cpu.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\error_private.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\fse.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\huf.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\mem.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\xxhash.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_internal.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_literals.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_compress_sequences.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_cwksp.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_ddict.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_decompress_block.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_decompress_internal.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_double_fast.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_errors.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_fast.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_internal.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_lazy.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_ldm.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\zstd_opt.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\pool.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\hist.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\allocator.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\array.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\base.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\buffer.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\buffer_ref.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\default_allocator.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\detached_buffer.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\flatbuffer_builder.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\flatbuffers.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_zstd\bitstream.h">
+      <Filter>zstd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\stl_emulation.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\string.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\struct.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\table.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\vector.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\vector_downward.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\_pgn\_flatbuffers\flatbuffers\verifier.h">
+      <Filter>flatbuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet_thread.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet_file.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet_geom.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet_charcode.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pgn\libneet_pixel.h">
+      <Filter>pgn</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

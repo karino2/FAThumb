@@ -1,0 +1,6 @@
+# InnoSetup_Thumb
+
+このディレクトリはInnoSetup関連のディレクトリです。
+FAThumbDllのテストが終わったあとにInnoSetupでインストーラーを作る時に使います。
+
+FAThumb下でビルドして出来たdllを、FAThumbDll_arm64.dllとFAThumbDll_x64.dllという名前でこのフォルダにコピーしてビルドします。
