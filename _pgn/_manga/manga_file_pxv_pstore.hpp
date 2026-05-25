@@ -1,7 +1,7 @@
-﻿// Copyright 2026 PGN Inc. All rights reserved.
-// SPDX-License-Identifier: Apache-2.0
+﻿/* -*- coding: utf-8 -*- マルチバイト */
 
-/* -*- coding: utf-8 -*- マルチバイト */
+// Copyright 2026 PGN Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
 
 #ifndef MANGA_FILE_PXV_PSTORE_H_
 #define MANGA_FILE_PXV_PSTORE_H_
@@ -35,6 +35,7 @@ extern "C" {
 #include <stdint.h>
 }
 
+#include "libneet_stl_util.h"
 #include "libneet_file.h"
 #include "libneet_charcode.h"
 #include "libneet_thread.h"
@@ -1257,6 +1258,24 @@ public:
   ReadOnlyPageStoreAdapter( ReadOnlyPageStoreAdapter&& src ) : _store( src._store ) {}
   
   RawPageData* MapVPage(int_vidx_t vidx) override { return _store.MapVPageAsRead(vidx); }
+  void UnmapVPage(RawPageData *page, int_vidx_t vidx) override { _store.UnmapVPage(page, vidx); }
+  bool IsMappedVidx( int_vidx_t vidx ) const override { return _store.IsMappedVidx( vidx ); }
+  void DebInfo( int_vidx_t vidx, std::stringstream& stream ) override { _store.DebInfo( vidx, stream ); }
+  uint8_t FormatVersion() const override { return _store.FormatVersion(); }
+
+};
+
+// ポインタを受け取って内部でdeleteするAPI(VideoSegmentReaderなど)に、別オブジェクトが所有しているReadablePageStoreを渡す為のアダプタ
+// デストラクタで何もしないで、他はコンストラクタで渡されたPageSgtoreに呼び出しを移譲するだけ。
+class BorrowedPageStoreAdapter : public ReadablePageStore
+{
+  ReadablePageStore& _store;
+public:
+  ~BorrowedPageStoreAdapter() override = default;
+  BorrowedPageStoreAdapter( ReadablePageStore& store ) : _store( store ) {}
+  BorrowedPageStoreAdapter( BorrowedPageStoreAdapter&& src ) : _store( src._store ) {}
+
+  RawPageData* MapVPage(int_vidx_t vidx) override { return _store.MapVPage(vidx); }
   void UnmapVPage(RawPageData *page, int_vidx_t vidx) override { _store.UnmapVPage(page, vidx); }
   bool IsMappedVidx( int_vidx_t vidx ) const override { return _store.IsMappedVidx( vidx ); }
   void DebInfo( int_vidx_t vidx, std::stringstream& stream ) override { _store.DebInfo( vidx, stream ); }

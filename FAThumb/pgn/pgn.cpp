@@ -1,7 +1,7 @@
-﻿// Copyright 2026 PGN Inc. All rights reserved.
-// SPDX-License-Identifier: Apache-2.0
+﻿/* -*- coding: utf-8 -*- マルチバイト */
 
-/* -*- coding: utf-8 -*- マルチバイト */
+// Copyright 2026 PGN Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
 
 #include <windows.h>
 #include <string>

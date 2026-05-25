@@ -1,7 +1,7 @@
-﻿// Copyright 2026 PGN Inc. All rights reserved.
-// SPDX-License-Identifier: Apache-2.0
+﻿/* -*- coding: utf-8 -*- マルチバイト */
 
-/* -*- coding: utf-8 -*- マルチバイト */
+// Copyright 2026 PGN Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
 
 #ifndef MANGA_FILE_PXV_PACK_H_
 #define MANGA_FILE_PXV_PACK_H_
@@ -18,7 +18,6 @@
 // タイル別保存関連
 #include <cmath>
 #include <functional>
-
 
 namespace pxvpack {
 
@@ -274,7 +273,7 @@ private:
   // 本当はwriteするまでdirtyでは無いが、例外的なケースで無駄に一回コミットが発生するのは大きな問題では無いので。
   bool _dirty = false;
 
-  bool _enableGC = false;
+  bool _enableGC = true;
 
   // デバッグ用のStreamの作成や削除の情報を保持するフラグ
   bool _enableStats = false;
@@ -440,12 +439,16 @@ public:
   // その削除情報をクリアする。
   void VerifyAndClearGCDebInfo()
   {
+  #ifdef QT_DEBUG
     assert( GCEnabled() );
-    assert( _del1Vidx.size() == _del2Vidx.size() );
-    for( auto vidx1 : _del1Vidx )
+    // _del1Vidxは-1も許すので-1は削除して比較。
+    auto filterd1 = neet::FilterFn( std::vector<int_vidx_t>(_del1Vidx.begin(), _del1Vidx.end() ), [](int_vidx_t vidx) { return vidx != -1; } );
+    assert( filterd1.size() == _del2Vidx.size() );
+    for( auto vidx1 : filterd1 )
     {
       assert( _del2Vidx.find( vidx1 ) != _del2Vidx.end() );
     }
+  #endif
 
     _del1Vidx.clear();
     _del2Vidx.clear();

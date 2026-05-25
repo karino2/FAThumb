@@ -90,13 +90,21 @@ struct PXVMeta FLATBUFFERS_FINAL_CLASS : private ::flatbuffers::Table {
   typedef PXVMetaBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_VIDEOSEGMENTVIDXES = 4,
-    VT_FONTMETAVEC = 6
+    VT_FONTMETAVEC = 6,
+    VT_TIMELAPSEV2ENABLED = 8,
+    VT_VIDEOSEGMENTVIDXESV2 = 10
   };
   const ::flatbuffers::Vector<int64_t> *videoSegmentVidxes() const {
     return GetPointer<const ::flatbuffers::Vector<int64_t> *>(VT_VIDEOSEGMENTVIDXES);
   }
   const ::flatbuffers::Vector<::flatbuffers::Offset<pxvmeta::FontMeta>> *fontMetaVec() const {
     return GetPointer<const ::flatbuffers::Vector<::flatbuffers::Offset<pxvmeta::FontMeta>> *>(VT_FONTMETAVEC);
+  }
+  bool timelapseV2Enabled() const {
+    return GetField<uint8_t>(VT_TIMELAPSEV2ENABLED, 1) != 0;
+  }
+  const ::flatbuffers::Vector<int64_t> *videoSegmentVidxesV2() const {
+    return GetPointer<const ::flatbuffers::Vector<int64_t> *>(VT_VIDEOSEGMENTVIDXESV2);
   }
   bool Verify(::flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
@@ -105,6 +113,9 @@ struct PXVMeta FLATBUFFERS_FINAL_CLASS : private ::flatbuffers::Table {
            VerifyOffset(verifier, VT_FONTMETAVEC) &&
            verifier.VerifyVector(fontMetaVec()) &&
            verifier.VerifyVectorOfTables(fontMetaVec()) &&
+           VerifyField<uint8_t>(verifier, VT_TIMELAPSEV2ENABLED, 1) &&
+           VerifyOffset(verifier, VT_VIDEOSEGMENTVIDXESV2) &&
+           verifier.VerifyVector(videoSegmentVidxesV2()) &&
            verifier.EndTable();
   }
 };
@@ -118,6 +129,12 @@ struct PXVMetaBuilder {
   }
   void add_fontMetaVec(::flatbuffers::Offset<::flatbuffers::Vector<::flatbuffers::Offset<pxvmeta::FontMeta>>> fontMetaVec) {
     fbb_.AddOffset(PXVMeta::VT_FONTMETAVEC, fontMetaVec);
+  }
+  void add_timelapseV2Enabled(bool timelapseV2Enabled) {
+    fbb_.AddElement<uint8_t>(PXVMeta::VT_TIMELAPSEV2ENABLED, static_cast<uint8_t>(timelapseV2Enabled), 1);
+  }
+  void add_videoSegmentVidxesV2(::flatbuffers::Offset<::flatbuffers::Vector<int64_t>> videoSegmentVidxesV2) {
+    fbb_.AddOffset(PXVMeta::VT_VIDEOSEGMENTVIDXESV2, videoSegmentVidxesV2);
   }
   explicit PXVMetaBuilder(::flatbuffers::FlatBufferBuilder &_fbb)
         : fbb_(_fbb) {
@@ -133,23 +150,32 @@ struct PXVMetaBuilder {
 inline ::flatbuffers::Offset<PXVMeta> CreatePXVMeta(
     ::flatbuffers::FlatBufferBuilder &_fbb,
     ::flatbuffers::Offset<::flatbuffers::Vector<int64_t>> videoSegmentVidxes = 0,
-    ::flatbuffers::Offset<::flatbuffers::Vector<::flatbuffers::Offset<pxvmeta::FontMeta>>> fontMetaVec = 0) {
+    ::flatbuffers::Offset<::flatbuffers::Vector<::flatbuffers::Offset<pxvmeta::FontMeta>>> fontMetaVec = 0,
+    bool timelapseV2Enabled = true,
+    ::flatbuffers::Offset<::flatbuffers::Vector<int64_t>> videoSegmentVidxesV2 = 0) {
   PXVMetaBuilder builder_(_fbb);
+  builder_.add_videoSegmentVidxesV2(videoSegmentVidxesV2);
   builder_.add_fontMetaVec(fontMetaVec);
   builder_.add_videoSegmentVidxes(videoSegmentVidxes);
+  builder_.add_timelapseV2Enabled(timelapseV2Enabled);
   return builder_.Finish();
 }
 
 inline ::flatbuffers::Offset<PXVMeta> CreatePXVMetaDirect(
     ::flatbuffers::FlatBufferBuilder &_fbb,
     const std::vector<int64_t> *videoSegmentVidxes = nullptr,
-    const std::vector<::flatbuffers::Offset<pxvmeta::FontMeta>> *fontMetaVec = nullptr) {
+    const std::vector<::flatbuffers::Offset<pxvmeta::FontMeta>> *fontMetaVec = nullptr,
+    bool timelapseV2Enabled = true,
+    const std::vector<int64_t> *videoSegmentVidxesV2 = nullptr) {
   auto videoSegmentVidxes__ = videoSegmentVidxes ? _fbb.CreateVector<int64_t>(*videoSegmentVidxes) : 0;
   auto fontMetaVec__ = fontMetaVec ? _fbb.CreateVector<::flatbuffers::Offset<pxvmeta::FontMeta>>(*fontMetaVec) : 0;
+  auto videoSegmentVidxesV2__ = videoSegmentVidxesV2 ? _fbb.CreateVector<int64_t>(*videoSegmentVidxesV2) : 0;
   return pxvmeta::CreatePXVMeta(
       _fbb,
       videoSegmentVidxes__,
-      fontMetaVec__);
+      fontMetaVec__,
+      timelapseV2Enabled,
+      videoSegmentVidxesV2__);
 }
 
 inline const pxvmeta::PXVMeta *GetPXVMeta(const void *buf) {
